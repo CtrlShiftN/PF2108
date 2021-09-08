@@ -10,5 +10,51 @@
     <h1>This is a heading</h1>
     <h4>This is h4 heading</h4>
     <p>This is a paragraph</p>
+    <a href="https://www.codegym.vn">Trang chủ CodeGym</a>
+    <br>
+    <img src="images/universe.jpg" width="500px" alt="universe image" title="Man with universe" style="opacity: 1;">
+    <ul>
+        <li>First</li>
+        <li>Second</li>
+    </ul>
+    <audio controls>
+        <source src="audio/AnhHungXaDieu.mp3" type="audio/mp3">
+        Your audio is not supported!
+    </audio>
+    <br>
+    <video width="240px" controls>
+        <source src="audio/Khongtin.mp4" type="video/mp4">
+        Your audio is not supported!
+    </video>
+    <br>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Localhost &copy; 2021</p>
+    <form action="login.php" method="POST">
+        <fieldset>
+            <legend>Login form</legend>
+            <p>Username</p>
+            <input type="text" name="username" required>
+            <p>Email</p>
+            <input type="email" name="email" placeholder="abc@gmail.com">
+            <p>Password</p>
+            <input type="password" name="password">
+            <p>Gender</p>
+            <p><input type="radio" name="gender" value="Male"> Male</p>
+            <input type="radio" name="gender" value="Female"> Female
+            <p>Checkboxes</p>
+            <input type="checkbox" name="box[]" value="b1">Box 1
+            <input type="checkbox" name="box[]" value="b2"> Box 2
+            <input type="checkbox" name="box[]" value="b3">Box 3
+            <p>Select</p>
+            <select>
+                <option value="Op1">Op1</option>
+                <option value="Op2">Op2</option>
+                <option value="Op3">Op3</option>
+            </select>
+            <input type="submit" >
+            <input type="reset">
+        </fieldset>
+    </form>
+    <br>
+    <button onclick="alert('Hello')">Hello</button>
 </body>
 </html>
