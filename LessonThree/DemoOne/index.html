@@ -7,7 +7,7 @@
     <title>Trang Chủ</title>
 </head>
 <body>
-    <h1>This is a heading</h1>
+    <h1 id="" class="">This is a heading</h1>
     <h4>This is h4 heading</h4>
     <p>This is a paragraph</p>
     <a href="https://www.codegym.vn">Trang chủ CodeGym</a>
@@ -31,10 +31,10 @@
     <form action="login.php" method="POST">
         <fieldset>
             <legend>Login form</legend>
-            <p>Username</p>
-            <input type="text" name="username" required>
+            <label for="username">Username</label>
+            <input type="text" id="usernameID" name="username" required>
             <p>Email</p>
-            <input type="email" name="email" placeholder="abc@gmail.com">
+            <input type="email" name="email" value="abc@gmail.com">
             <p>Password</p>
             <input type="password" name="password">
             <p>Gender</p>
@@ -56,5 +56,6 @@
     </form>
     <br>
     <button onclick="alert('Hello')">Hello</button>
+    
 </body>
 </html>
