@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Two</title>
+</head>
+
+<body>
+    <ol id="student-list">
+        <li id="student-one">
+            <h3>Le Hoang Nam</h3>
+        </li>
+        <li id="student-two">
+            <h3>Nguyen Van Manh</h3>
+        </li>
+    </ol>
+    <button onclick="deleteStudentOne()">Delete student 1</button>
+    <button onclick="deleteStudentTwo()">Delete student 2</button>
+    <button onclick="deleteStudent()">Delete all</button>
+    <button onclick="addStudent()">Add student</button>
+
+
+    <script>
+        // tim kiem phan tu
+        let studentList = document.getElementById("student-list");
+        let studentOne = document.getElementById("student-one");
+        let studentTwo = document.getElementById("student-two");
+        let liTag = document.getElementsByTagName("li");
+        // var count = 0; // dem so phan tu duoc them vao dom
+        // ham bat su kien them sv
+        function addStudent() {
+            // count++; // moi lan them 1 phan tu thi dem tang them 1
+            // tao phan tu moi
+            let liObject = document.createElement("li");
+            // them noi dung cho phan tu moi
+            liObject.innerHTML = "<h3>Dinh Minh Thong</h3>";
+            // them thuoc tinh vao phan tu
+            // liObject.setAttribute('id','student-'+count); // them id,class,... cho 1 phan tu 
+            // them phan tu con
+            studentList.insertBefore(liObject, studentTwo);
+        }
+
+        // xoa phan tu
+        function deleteStudentOne(){
+            // xoa phan tu, cach 1
+            studentOne.remove();
+        }
+        function deleteStudentTwo(){
+            // xoa phan tu, cach 2
+            studentList.removeChild(studentTwo);
+        }
+        function deleteStudent(){
+            // xoa phan tu cha
+            studentList.remove();
+        }
+
+        function greeting(){
+            alert(studentList);
+            console.log(studentList);
+            document.write(studentList);
+        }
+    </script>
+</body>
+
+</html>
