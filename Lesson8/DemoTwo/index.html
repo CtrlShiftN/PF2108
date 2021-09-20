@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo One</title>
+    <style>
+        .calculateForm {
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="calculateForm" action="calculate.php" method="POST">
+        <input type="number" name="firstNumber" id="firstNumber" placeholder="Nhap so thu nhat">
+        <input type="number" name="secondNumber" id="secondNumber" placeholder="Nhap so thu hai">
+    </form>
+    <button id="plusBtn">Addition (+)</button>
+    <button id="subtractBtn">Subtraction (-)</button>
+    <button id="multiplyBtn">Multiplication (*)</button>
+    <button id="divideBtn">Division (/)</button>
+    <br>
+    <h4 id="message"></h4>
+    <script>
+        let firstNumber, secondNumber;
+        let message = document.getElementById('message');
+        let plusBtn = document.getElementById('plusBtn');
+        let subtractBtn = document.getElementById('subtractBtn');
+        let multiplyBtn = document.getElementById('multiplyBtn');
+        let divideBtn = document.getElementById('divideBtn');
+
+        // tu dong lay gia tri khi gia tri trong o input thay doi
+        document.getElementById('firstNumber').addEventListener('change', function () {
+            firstNumber = parseFloat(document.getElementById('firstNumber').value);
+        });
+        document.getElementById('secondNumber').addEventListener('change', function () {
+            secondNumber = parseFloat(document.getElementById('secondNumber').value);
+        });
+        // xu ly su kien
+        plusBtn.addEventListener('click', function () {
+            message.innerText = "Result Plus" + (firstNumber + secondNumber);
+        });
+        // xu ly su kien khi con trỏ chuột hover qua nút Cộng
+        // plusBtn.addEventListener('mouseover',function(){
+        //     plusBtn.style.background = 'red';
+        // });
+        subtractBtn.addEventListener('click', function () {
+            message.innerText = "Result Subtraction" + (firstNumber - secondNumber);
+        });
+        multiplyBtn.addEventListener('click', function () {
+            message.innerText = "Result Multiplication" + (firstNumber * secondNumber);
+        });
+        divideBtn.addEventListener('click', function () {
+            message.innerText = "Result Division" + (firstNumber / secondNumber);
+        });
+    </script>
+</body>
+
+</html>
