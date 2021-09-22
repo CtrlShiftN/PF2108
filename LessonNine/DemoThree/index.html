@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo three</title>
+</head>
+
+<body>
+    <!-- <script>
+        let x = 1.0 - 0.1 - 0.1 - 0.1 - 0.1 - 0.1;
+        console.log(x == 0.5);
+        console.log(x);
+    </script> -->
+    <script>
+        // lấy tên người dùng
+        let userName = prompt("Who's there?", '');
+        // Kiểm tra tên người dùng
+        if (userName == 'Admin') { // nếu tên người dùng là Admin
+            // Lấy mật khẩu người dùng Admin
+            let pass = prompt('Password?', '');
+            // Kiểm tra mật khẩu
+            if (pass == 'TheMaster') { // Nếu mật khẩu là TheMaster thì hiển thị thông báo chào mừng
+                alert('Welcome!');
+            } else if (pass == null) { // Nếu không nhập mật khẩu thì hiện thông báo Canceled
+                alert('Canceled.');
+            } else { // Nếu nhập mật khẩu mà không phải TheMaster thì báo sai mật khẩu
+                alert('Wrong password');
+            }
+        } else if (userName == null) { // nếu tên người dùng để trống thì hiện thông báo Canceled
+            alert('Canceled');
+        } else { // nếu tên người dùng không để trống nhưng cũng không phải là Admin thì hiện thông báo Tôi không biết bạn
+            alert("I don't know you");
+        }
+    </script>
+</body>
+
+</html>
