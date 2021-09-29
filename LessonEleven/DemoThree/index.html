@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Three</title>
+</head>
+
+<body>
+    <script>
+        let number = parseInt(prompt("Enter an integer: "));
+        let total = 0;
+        while (number != -1) {
+            total += number;
+            number = parseInt(prompt("Enter an integer: "));
+            // total += number; // uncomment dòng này và comment dòng 16 để thấy sự khác biệt
+            document.write("Total: " + total + "<br>");
+        }
+    </script>
+</body>
+
+</html>

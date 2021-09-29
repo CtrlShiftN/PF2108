@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo One</title>
+</head>
+
+<body>
+    <script>
+        // khong su dung vong lap
+        document.write("The number is 0<br>");
+        document.write("The number is 1<br>");
+        document.write("The number is 2<br>");
+        document.write("The number is 3<br>");
+        document.write("The number is 4<br>");
+
+        // su dung vong lap
+        for (let i = 1; i < 2; i++) {
+            document.write("The number is " + i + "<br>");
+        }
+
+        // tu indent code: Alt + Shift + F
+        // vong lap i,j
+        // i chay tu 0-10, j chay tu 10-0
+        for (let i = 0, j = 10; i <= 10; i++, j--) {
+            let sum = i + j;
+            document.write(i + " + " + j + " = " + sum + "<br>");
+        }
+    </script>
+</body>
+
+</html>
