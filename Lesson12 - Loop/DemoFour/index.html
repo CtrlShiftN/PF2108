@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Four</title>
+</head>
+
+<body>
+    <script>
+        let count = 0;
+        let N = 2;
+        while (count < 20) { // in ra 20 so nguyen to dau tien
+            if (isPrime(N)) {
+                document.write(N + ' ');
+                count++;
+            }
+            N++;
+        }
+
+        // ham kiem tra so nguyen to
+        function isPrime(number) {
+            // tinh sqrt
+            let temp = parseInt(Math.sqrt(number));
+            // gan gia tri mac dinh so nay la so nguyen to
+            let isPrime = true;
+            // check xem n co phai so nguyen to hay k
+            for (let i = 2; i <= temp; i++) {
+                // neu n chia het cho 1 so bat ki tu 2 den sqrt cua n thi  n k phai so nguyen to
+                if (number % i == 0) {
+                    isPrime = false; // gan gia tri so nay k phai so nguyen to
+                }
+            }
+            // tra ve ket qua xem day co phai so nguyen to hay k
+            return isPrime;
+        }
+    </script>
+</body>
+
+</html>
