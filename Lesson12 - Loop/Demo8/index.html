@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #numberPyramid tr td {
+            text-align: end;
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let noOfRow = 8;
+        let countRow = 1;
+        document.write('<table id="numberPyramid">');
+        for (let i = noOfRow; i > 0; i--) {
+            document.write('<tr>');
+            // in ra khoang trong ben trai man hinh
+            for (let j = 1; j <= i; j++) {
+                document.write('<td>&nbsp;</td>');
+            }
+            // in ra nua ben trai kim tu thap
+            for (let j = 1; j <= countRow; j++) {
+                document.write('<td>' + Math.pow(2, j - 1) + '</td>');
+            }
+            // in ra nua ben phai kim tu thap
+            for (let j = countRow - 1; j >= 1; j--) {
+                document.write('<td>' + Math.pow(2, j - 1) + '</td>');
+            }
+            for (let j = 1; j <= noOfRow - countRow; j++) {
+                document.write('<td>&nbsp;</td>');
+            }
+            // dong tiep theo
+            document.write('</tr>');
+            countRow++;
+        }
+        document.write('</table>');
+    </script>
+</body>
+
+</html>
