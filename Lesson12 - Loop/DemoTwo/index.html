@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Two</title>
+</head>
+
+<body>
+    <script>
+        // 1 1 2 3 5 8 13 21 34 55 89 
+        let limit = parseInt(prompt('Enter number of Fibonacci: '));
+        let firstNumber = secondNumber = 1; // khai báo 2 số đầu tiên
+        let fiboString = firstNumber + " " + secondNumber + " "; // chuỗi lưu kết quả
+        let count = 2; // bắt đầu đếm từ số thứ 3
+        while (count < limit) {
+            nextNumber = firstNumber + secondNumber; // tính số tiếp theo thứ n trong dãy số
+            firstNumber = secondNumber; // gán số n-2 = số thứ 2 đã khai báo trước đó
+            secondNumber = nextNumber; // gán số n-1 = vừa tính để tính tiếp cho số tiếp theo
+            fiboString += nextNumber + " "; // lưu kết quả
+            count++; // số tiếp theo
+        }
+        document.write(fiboString);
+    </script>
+</body>
+
+</html>
