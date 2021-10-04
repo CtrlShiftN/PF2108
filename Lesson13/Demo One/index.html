@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo One</title>
+</head>
+
+<body>
+    <script>
+        let array_car = [5, 9, 12];
+        let total = 0;
+        // for (let i = 0; i < array_car.length; i++) {
+        //     total+=parseInt(array_car[i]);
+        //     document.write(total+"<br>");
+        // }
+        let array_bike = new Array('Honda', 'Wave');
+        // document.write(array_bike);
+        // alert(array_bike);
+        for (let index in array_bike) {
+            document.write(array_bike[index] + "<br>");
+        }
+        for (let bike of array_bike) {
+            document.write(bike + "<br>");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Two</title>
+</head>
+
+<body>
+    <input type="number" id="number" name="number" required>
+    <button id="add">Add</button>
+    <button id="pop">Pop</button>
+    <button id="display">Display</button>
+    <br><br>
+    <span id="result"></span>
+    <script>
+        let numberInput = document.getElementById("number");
+        let addBtn = document.getElementById("add");
+        let popBtn = document.getElementById("pop");
+        let displayBtn = document.getElementById("display");
+        let result = document.getElementById("result");
+        let arrayNumber = [];
+        addBtn.addEventListener('click', function () {
+            // lay gia tri sau do add luon vao mang
+            // arrayNumber.push(numberInput.value);
+            // numberInput.value = "";
+            // them vao tai index = 0
+            arrayNumber.unshift(numberInput.value);
+            numberInput.value = "";
+        });
+
+        popBtn.addEventListener('click', function () {
+            // xoa phan tu cuoi cung trong mang
+            // arrayNumber.pop();
+            // xoa ptu dau tien
+            // arrayNumber.shift();
+            // xoa tai vi tri bat ky
+            delete arrayNumber[2];
+            arrayNumber[2] = undefined;
+        });
+
+        displayBtn.addEventListener('click', function () {
+            var resultStr = ''; // khai bao chuoi luu ket qua
+            for (let i = 0; i < arrayNumber.length; i++) {
+                // concate chuoi ket qua
+                resultStr += "Element " + i + " = " + arrayNumber[i] + "<br>";
+            }
+            // in ra man hinh
+            result.innerHTML = resultStr;
+        });
+
+    </script>
+</body>
+
+</html>
