@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo One</title>
+</head>
+
+<body>
+    <script>
+        // khoi tao mang 2 chieu
+        let cities = [
+            ['Ha Noi', 'Ho Chi Minh', 'Hai Phong'],
+            ['Tokyo', 'Kyoto', 'Osaka']
+        ];
+        console.log(cities);
+        // Duyet mang
+        for (let i = 0; i < cities.length; i++) { // duyet tat ca phan tu trong mang
+            for (let j = 0; j < cities[i].length; j++) { // duyet tung phan tu cua mang con cities[] tại i
+                document.write(cities[i][j] + "<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>

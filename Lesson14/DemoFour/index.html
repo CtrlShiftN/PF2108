@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 4</title>
+</head>
+
+<body>
+    <script>
+        let x = [-3, 5, 1, 3, 2, 10];
+        console.log(x);
+        // đảo ngược arr cách 1
+        let first = 0; // index dau tien cua mang
+        let last = x.length - 1; // index cuoi cung cua mang
+        while (first < last) { // chung nao con phan tu can dao nguoc thi con chay
+            // đổi chỗ 2 số ở vị trí đầu cuối cho nhau
+            let b = x[first]; // khai bao biến tạm b, gán cho giá trị đầu
+            x[first] = x[last]; // đổi giá trị của index đầu tiên = giá trị của index cuối
+            x[last] = b; // đổi giá trị tại index cuối = gia trị trong biến tạm b
+            first++; // tăng index đầu
+            last--; // giảm index cuối
+        }
+        document.write(x + "<br>");
+        // đảo ngược arr cách 2
+        let y = [];
+        for (let i = x.length - 1; i >= 0; i--) {
+            y.push(x[i]);
+        }
+        x=y;
+        document.write(x);
+    </script>
+</body>
+
+</html>

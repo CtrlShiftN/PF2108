@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Two</title>
+</head>
+
+<body>
+    <script>
+        let arrNumber = [2, 3, 10, 7, 4, 9, 5]; // khai bao mang 1 chieu
+        let search = parseInt(prompt("Nhap so ban can tim: "));
+        // tim kiem 1 phan tu trong mang
+        for (let i = 0; i < arrNumber.length; i++) {
+            if (arrNumber[i] == search) {
+                alert('So can tim o vi tri thu ' + i);
+            }
+        }
+        // tim so lon nhat trong mang
+        let max = arrNumber[0];
+        for (let i = 1; i < arrNumber.length; i++) {
+            if (arrNumber[i] > max) max = arrNumber[i]
+        }
+        alert('Max: ' + max)
+        // tim so nho nhat trong mang
+        let min = arrNumber[0];
+        for (let i = 1; i < arrNumber.length; i++) {
+            if (arrNumber[i] < min) min = arrNumber[i]
+        }
+        alert('Min: ' + min)
+    </script>
+</body>
+
+</html>
