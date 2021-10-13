@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let height = 170; // cm
+        let weight = 68; // kg
+        // bmi = w / h^2 // kg & m
+        function getBMI(h, w) {
+            h = h / 100;
+            return w / (h * h);
+        }
+        console.log('Bạn cao ' + height + 'cm nặng ' + weight + 'kg chỉ số BMI = ' + getBMI(height, weight))
+        // in kq: ban cao 170cm nang 68kg
+    </script>
+</body>
+
+</html>

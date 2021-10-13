@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 2</title>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <input type="text" name="word" id="input_word" placeholder="Enter your word here">
+        <input type="submit" value="Translate" id="submit">
+    </form>
+    <br>
+    <br>
+    <span id="result"></span>
+    <script>
+        // khai bao tu dien
+        let dictionary = [];
+        dictionary['Orange'] = 'Cam';
+        dictionary['Lemon'] = 'Chanh';
+        dictionary['Ruler'] = 'Cái thước';
+        dictionary['Money'] = 'Tiền';
+        console.log(dictionary);
+        // khai bao bien
+        let inputWord = document.getElementById('input_word');
+        let result = document.getElementById('result');
+        let submit = document.getElementById('submit');
+        // ham xu ly
+        submit.addEventListener('click', function () {
+            event.preventDefault();
+            let translated_word = "Từ vừa nhập không có trong từ điển";
+            // lay gia tri nguoi dung nhap vao
+            let searchingWord = inputWord.value;
+            // tim kiem trong mang dictionary
+            for (let index in dictionary) {
+                if (index == searchingWord) translated_word = dictionary[index];
+            }
+            // in ra ket qua
+            result.innerHTML = translated_word;
+        });
+
+    </script>
+</body>
+
+</html>
