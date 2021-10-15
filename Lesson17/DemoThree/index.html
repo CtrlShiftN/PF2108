@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Three</title>
+    <style>
+        #addBtn,
+        .bg-green {
+            background-color: #52D017;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .red {
+            color: red;
+        }
+
+        #resultTable tr:nth-child(odd) {
+            background-color: lightgrey;
+        }
+
+        #resultTable tr:first-child {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Add new product</h3>
+    <form action="#" method="post">
+        <input type="text" name="productName" id="inputProductName" placeholder="New Product" required />
+        <input type="submit" value="Add" id="addBtn">
+        <br>
+        <span id="help-block" class="red" style="display: none;"></span>
+    </form>
+    <h3>Display all products</h3>
+    <table id="resultTable">
+
+    </table>
+    <script>
+        let arrProduct = ['Sony Xperia', 'LG Q8', 'Samsung Galaxy S8', 'Samsung Galaxy Note 8'];
+        let inputProductName = document.getElementById('inputProductName');
+        let addBtn = document.getElementById('addBtn');
+        let resultTable = document.getElementById('resultTable');
+        let totalRecord = document.getElementById('totalRecord');
+        let helpBlock = document.getElementById('help-block');
+        // display all results
+        displayResult();
+        // add product
+        addBtn.addEventListener('click', function () {
+            event.preventDefault();
+            let productName = inputProductName.value;
+            if (productName.length < 1 || productName == '' || productName == null) {
+                helpBlock.innerHTML = 'Please enter a product name!';
+                helpBlock.style.display = 'block';
+                inputProductName.focus();
+            } else {
+                helpBlock.style.display = 'none';
+                arrProduct.push(inputProductName.value);
+                displayResult();
+            }
+        });
+        function displayResult() {
+            let tableHtml = '<tr><th colspan="3">Product Name</th><th class="red" id="totalRecord">' + arrProduct.length + ' products</th></tr>'
+            for (let i = 0; i < arrProduct.length; i++) {
+                tableHtml += '<tr>';
+                tableHtml += '<td id="' + i + '">'+ (i+1) +' ' + arrProduct[i] + '</td>';
+                tableHtml += '<td data-id="' + i + '" onclick="editProduct(this)"><button class="bg-green">Edit</button></td>';
+                tableHtml += '<td data-id="' + i + '" onclick="deleteProduct(this)"><button class="bg-red">Delete</button></td>';
+                tableHtml += '<td></td></tr>';
+            }
+            resultTable.innerHTML = tableHtml;
+        }
+        function editProduct(obj) {
+            var productID = obj.getAttribute('data-id');
+            let productNode = document.getElementById(productID);
+            productNode.innerHTML = '<input id="p-' + productID + '" value="' + arrProduct[productID] + '">';
+            obj.innerHTML = '<td><button class="bg-green" data-id="' + productID + '" onclick="submitProduct(this)">Done</button></td>';
+        }
+
+        function submitProduct(obj) {
+            var productID = obj.getAttribute('data-id');
+            var inputIDStr = 'p-' + productID;
+            let inputNode = document.getElementById(inputIDStr);
+            arrProduct[productID] = inputNode.value;
+            inputNode.style.display = 'none';
+            displayResult();
+        }
+
+        function deleteProduct(obj) {
+            var productID = obj.getAttribute('data-id');
+            remove(productID);
+            displayResult();
+        }
+
+        // Hàm xóa tại 1 vị trí
+        function remove(index) {
+            let count = 0;
+            let arrRes = [];
+            for (let i = 0; i < arrProduct.length; i++) {
+                if (i != index) {
+                    arrRes[count] = arrProduct[i];
+                    count++;
+                }
+            }
+            arrProduct = arrRes;
+        }
+    </script>
+</body>
+
+</html>
