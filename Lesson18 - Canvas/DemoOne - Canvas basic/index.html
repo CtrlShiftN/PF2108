@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myCanvas {
+            border: 1px red solid;
+            background-color: aqua;
+        }
+
+        #myRect {
+            border: 1px red solid;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <script>
+        // vẽ hình tròn
+        // let canvas = document.getElementById("myCanvas");
+        // let ctx = canvas.getContext("2d");
+        // ctx.beginPath();
+        // ctx.arc(65, 50, 40, 0, 1 * Math.PI); // x, y, radius, start, end (0, 0.5*PI - 2*PI)
+        // ctx.stroke();
+    </script>
+    <script>
+        // vẽ hình chữ nhật màu đỏ
+        // let canvas = document.getElementById("myCanvas");
+        // let ctx = canvas.getContext("2d");
+        // ctx.fillStyle = "#FF0000";
+        // ctx.fillRect(10, 10, 150, 75); // x, y, width, height
+    </script>
+    <script>
+        // let canvas = document.getElementById("myCanvas");
+        // let ctx = canvas.getContext("2d");
+        // ctx.font = "30px Arial"; // font-size và font family
+        // ctx.fillText("Hello World", 20, 50) // nội dung, x, y
+    </script>
+    <script>
+        let canvas = document.getElementById('myCanvas');
+        let context = canvas.getContext('2d');
+        let imageObj = new Image();
+        imageObj.onload = function () {
+            context.drawImage(imageObj, 10, 20); // object hình ảnh, x, y
+        };
+        imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+    </script>
+</body>
+
+</html>
